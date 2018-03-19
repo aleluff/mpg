@@ -41,14 +41,28 @@ server.route({
     }
 });
 
+var cache = {};
+function sortDesc(array){
+    return array.split(",").sort(function (a, b) {
+        return b - a;
+    });
+}
+
 server.route({
     method: 'POST',
     path: '/cache/{ints}',
     handler: function (request, h) {
+
+        var key = JSON.stringify(request.path) + JSON.stringify(request.params);
+        if (!cache[key]){
+            cache[key] = sortDesc(request.params.ints);
+        }
+        else {
+            return cache[key];
+        }
+
         return delay(2000).then(() => {
-            return request.params.ints.split(",").sort(function (a, b) {
-                return b - a;
-            });
+            return cache[key];
         });
     }
 });
