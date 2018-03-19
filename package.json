@@ -1,0 +1,25 @@
+{
+  "name": "mpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "delay": "^2.0.0",
+    "hapi": "^17.2.3",
+    "joi": "^13.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleluff/mpg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleluff/mpg/issues"
+  },
+  "homepage": "https://github.com/aleluff/mpg#readme"
+}
